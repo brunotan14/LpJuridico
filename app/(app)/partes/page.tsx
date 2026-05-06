@@ -9,8 +9,8 @@ export default function PartesPage() {
         description="Clientes, réus, vítimas, testemunhas e autoridades"
       />
       <div className="flex flex-col items-center justify-center gap-3 p-20 text-center">
-        <Users className="h-10 w-10 text-neutral-800" />
-        <p className="text-sm text-neutral-600">
+        <Users className="h-10 w-10 text-zinc-800" />
+        <p className="text-sm text-zinc-600">
           Cadastro e gestão de partes processuais — em breve
         </p>
       </div>

@@ -24,19 +24,19 @@ export function WorkspaceSelector() {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-sm text-neutral-200 outline-none transition-colors hover:bg-neutral-800/60">
+      <DropdownMenuTrigger className="flex w-full items-center gap-2.5 rounded-md px-3 py-2.5 text-sm text-zinc-200 outline-none transition-colors hover:bg-zinc-800/60">
         <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-sm border border-gold-500/25 bg-gold-500/10">
           <span className="font-serif text-xs font-semibold leading-none text-gold-500">
             {active.initials}
           </span>
         </div>
         <span className="flex-1 truncate text-left font-medium">{active.name}</span>
-        <ChevronsUpDown className="h-3.5 w-3.5 shrink-0 text-neutral-500" />
+        <ChevronsUpDown className="h-3.5 w-3.5 shrink-0 text-zinc-500" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
         side="bottom"
         align="start"
-        className="border-neutral-800 bg-neutral-900"
+        className="border-zinc-800 bg-zinc-900"
       >
         {WORKSPACES.map((workspace) => (
           <DropdownMenuItem
@@ -56,7 +56,7 @@ export function WorkspaceSelector() {
           </DropdownMenuItem>
         ))}
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="gap-2.5 text-neutral-400">
+        <DropdownMenuItem className="gap-2.5 text-zinc-400">
           <Plus className="h-4 w-4" />
           Criar escritório
         </DropdownMenuItem>

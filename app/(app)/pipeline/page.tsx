@@ -9,8 +9,8 @@ export default function PipelinePage() {
         description="Kanban processual com drag-and-drop entre fases penais"
       />
       <div className="flex flex-col items-center justify-center gap-3 p-20 text-center">
-        <Kanban className="h-10 w-10 text-neutral-800" />
-        <p className="text-sm text-neutral-600">
+        <Kanban className="h-10 w-10 text-zinc-800" />
+        <p className="text-sm text-zinc-600">
           Pipeline com 9 fases processuais e auditoria de transições — em breve
         </p>
       </div>

@@ -9,8 +9,8 @@ export default function ConfiguracoesPage() {
         description="Escritório, equipe, notificações e preferências do sistema"
       />
       <div className="flex flex-col items-center justify-center gap-3 p-20 text-center">
-        <Settings className="h-10 w-10 text-neutral-800" />
-        <p className="text-sm text-neutral-600">
+        <Settings className="h-10 w-10 text-zinc-800" />
+        <p className="text-sm text-zinc-600">
           Roles, convites e preferências de notificação — em breve
         </p>
       </div>

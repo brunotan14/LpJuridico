@@ -27,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`dark ${cormorant.variable} ${inter.variable}`}>
-      <body className="font-sans antialiased bg-neutral-950 text-neutral-200">
+      <body className="font-sans antialiased bg-zinc-950 text-zinc-200">
         {children}
       </body>
     </html>

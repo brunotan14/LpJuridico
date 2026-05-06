@@ -32,7 +32,7 @@ export function SidebarContent() {
         <WorkspaceSelector />
       </div>
 
-      <Separator className="bg-neutral-800" />
+      <Separator className="bg-zinc-800" />
 
       <nav className="flex-1 space-y-0.5 overflow-y-auto px-2 py-3">
         {NAV_ITEMS.map((item) => (
@@ -45,7 +45,7 @@ export function SidebarContent() {
         ))}
       </nav>
 
-      <Separator className="bg-neutral-800" />
+      <Separator className="bg-zinc-800" />
 
       <div className="px-2 py-3">
         <UserNav />
