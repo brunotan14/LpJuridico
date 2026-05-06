@@ -3,9 +3,9 @@ import { MobileHeader } from "@/components/layout/mobile-header";
 
 export default function AppLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-screen overflow-hidden bg-neutral-950">
+    <div className="flex h-screen overflow-hidden bg-zinc-950">
       {/* Sidebar — visível apenas no desktop */}
-      <aside className="hidden w-60 shrink-0 flex-col border-r border-neutral-800 bg-neutral-950 md:flex">
+      <aside className="hidden w-60 shrink-0 flex-col border-r border-zinc-800 bg-zinc-950 md:flex">
         <SidebarContent />
       </aside>
 

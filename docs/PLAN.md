@@ -4,89 +4,57 @@
 
 ---
 
-## Identidade Visual — Dark Theme Institucional
+## Identidade Visual — Dark Theme
 
-O LP Jurídico adota dark mode como tema padrão, derivado da logomarca "Leandro Pedrosa — Consultoria e Assessoria Jurídica" (preto + dourado, monograma "LP" em serifa). A paleta prioriza sofisticação institucional, contraste acessível e destaque inequívoco para prazos críticos.
+O LP Jurídico adota dark mode como tema padrão. A paleta prioriza contraste acessível, hierarquia visual clara e destaque para ações e dados críticos.
 
 **Backgrounds (camadas):**
 
 | Camada | Token Tailwind | Hex |
 |---|---|---|
-| Base (mais funda) | `neutral-950` | `#0a0a0a` |
-| Superfície (cards, modais) | `neutral-900` | `#171717` |
-| Elevado (dropdowns, tooltips) | `neutral-800` | `#262626` |
-| Borda | `neutral-700` | `#404040` |
+| Base (mais funda) | `zinc-950` | `#09090b` |
+| Superfície (cards, modais) | `zinc-900` | `#18181b` |
+| Elevado (dropdowns, tooltips) | `zinc-800` | `#27272a` |
+| Borda | `zinc-700` | `#3f3f46` |
 
 **Tipografia:**
 
 | Uso | Token Tailwind | Hex |
 |---|---|---|
-| Título institucional (serifa) | `neutral-50` | `#fafafa` |
-| Corpo / label | `neutral-200` | `#e5e5e5` |
-| Texto secundário | `neutral-400` | `#a3a3a3` |
-| Placeholder | `neutral-500` | `#737373` |
+| Título / destaque | `zinc-50` | `#fafafa` |
+| Corpo / label | `zinc-300` | `#d4d4d8` |
+| Texto secundário | `zinc-500` | `#71717a` |
+| Placeholder | `zinc-600` | `#52525b` |
 
 **Cores funcionais:**
 
-| Papel | Token customizado | Hex |
+| Papel | Token Tailwind | Hex |
 |---|---|---|
-| Acento institucional (logo, badges premium) | `gold-500` | `#c9a961` |
-| Acento hover / brilho | `gold-400` | `#d4b97a` |
-| Acento sombra (gradiente) | `gold-600` | `#b8924a` |
-| Sucesso / prazo cumprido / processo ganho | `emerald-500` | `#10b981` |
-| Crítico / prazo D-1 / perdido | `red-500` | `#ef4444` |
-| Atenção / prazo D-3 a D-7 | `amber-500` | `#f59e0b` |
-| Sigiloso / confidencial | `purple-500` | `#a855f7` |
-| Neutro / tag | `neutral-700` | `#404040` |
-
-**Tipografia (fontes):**
-
-- **Serifa institucional**: `Cormorant Garamond` (logo, títulos hero, login) — via `next/font/google`
-- **Sans-serif funcional**: `Inter` (UI: tabelas, formulários, cards, navegação) — via `next/font/google`
-- Nunca misturar serifa em botões ou labels
+| Primária (ação, botão, link) | `indigo-500` | `#6366f1` |
+| Primária hover | `indigo-400` | `#818cf8` |
+| Sucesso | `emerald-500` | `#10b981` |
+| Perda / crítico | `red-500` | `#ef4444` |
+| Alerta / prazo próximo | `amber-400` | `#fbbf24` |
+| Neutro / tag | `zinc-700` | `#3f3f46` |
 
 **Aplicação por componente:**
 
-- **Sidebar:** fundo `neutral-950`, links ativos com fundo `neutral-800` + texto `neutral-50` + borda esquerda `gold-500`. Logo "LP" em dourado no topo
-- **Cards do Kanban:** fundo `neutral-900`, borda `neutral-800`, **borda esquerda colorida** (verde/âmbar/vermelho/cinza) indicando criticidade do próximo prazo, hover eleva para `neutral-800` com sombra sutil
-- **Cards de prazo crítico:** tarja vertical vermelha à esquerda + tipografia maior + timer de horas restantes
-- **Calendário:** chips por tipo (audiência `neutral-50`, prazo `amber-500`, visita ao preso `purple-500`, reunião `gold-500`)
-- **Modais e drawers:** fundo `neutral-900`, overlay `neutral-950/80` com blur. Modais de **confirmação de prazo cumprido** com peso visual extra (sombra forte, dois botões destacados)
-- **Inputs e selects:** fundo `neutral-800`, borda `neutral-700`, focus com anel `gold-500`
-- **Botão primário:** fundo `gold-500`, hover `gold-400`, texto `neutral-950` (contraste alto)
-- **Botão ghost/outline:** borda `neutral-700`, hover fundo `neutral-800`
-- **Badge de valor honorário (R$):** fundo `emerald-950`, texto `emerald-400`
-- **Badge de prazo D-1:** fundo `red-950`, texto `red-400`, com `animate-pulse`
-- **Badge sigiloso:** fundo `purple-950`, texto `purple-400`, ícone de cadeado
+- **Sidebar:** fundo `zinc-950`, links ativos com fundo `zinc-800` + texto `zinc-50` + borda esquerda `indigo-500`
+- **Cards:** fundo `zinc-900`, borda `zinc-800`, hover eleva para `zinc-800` com sombra sutil
+- **Modais e drawers:** fundo `zinc-900`, overlay `zinc-950/80` com blur
+- **Inputs e selects:** fundo `zinc-800`, borda `zinc-700`, focus com anel `indigo-500`
+- **Botão primário:** fundo `indigo-600`, hover `indigo-500`, texto `zinc-50`
+- **Botão ghost/outline:** borda `zinc-700`, hover fundo `zinc-800`
+- **Badge de valor (R$):** fundo `emerald-950`, texto `emerald-400`
+- **Badge de prazo urgente:** fundo `amber-950`, texto `amber-400`
 
 **Configuração no Tailwind (`tailwind.config.ts`):**
 
 ```ts
-darkMode: 'class',
-theme: {
-  extend: {
-    colors: {
-      gold: {
-        400: '#d4b97a',
-        500: '#c9a961',
-        600: '#b8924a',
-      },
-    },
-    fontFamily: {
-      serif: ['var(--font-cormorant)', 'serif'],
-      sans: ['var(--font-inter)', 'sans-serif'],
-    },
-  },
-},
+darkMode: 'class', // togglear via classe .dark na raiz
 ```
 
 Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, não alternativo.
-
-**O que evitar:**
-- Azul-índigo SaaS
-- Brasões, balanças, martelos como ícones de marca (clichê jurídico)
-- Gradientes vibrantes, glassmorphism colorido
-- Beges, marrons amadeirados ("estilo cartório")
 
 ---
 
@@ -102,14 +70,12 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 - [ ] Configurar variáveis de ambiente (`.env.local` + `.env.example`)
 - [ ] Conectar projeto ao Supabase (criar projeto, copiar URL e anon key)
 - [ ] Instalar dependências: `@supabase/ssr`, `@dnd-kit/core`, `recharts`, `resend`, `zod`, `date-fns`, `date-fns-tz`, `react-big-calendar`, `web-push`
-- [ ] Configurar `next/font` com `Cormorant Garamond` (serifa) e `Inter` (sans)
-- [ ] Configurar tokens de cor customizados no `tailwind.config.ts` (paleta dourado + neutros)
 - [ ] Configurar `lib/supabase/client.ts` e `lib/supabase/server.ts`
 - [ ] Configurar `middleware.ts` para proteção de rotas
 - [ ] Configurar ESLint + Prettier
 - [ ] Subir projeto no GitHub
 
-**Commit final:** `chore: project setup with Next.js 14, Supabase, shadcn/ui and brand identity`
+**Commit final:** `chore: project setup with Next.js 14, Supabase, shadcn/ui and folder structure`
 
 ---
 
@@ -118,18 +84,16 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 **Branch:** `feat/app-shell`
 **Objetivo:** Layout autenticado completo com sidebar, header e navegação — sem dados reais, tudo estático.
 
-- [ ] Criar layout base `app/(app)/layout.tsx`
-- [ ] Criar componente `Sidebar` com links de navegação (Dashboard, Partes, Processos, Pipeline, Agenda, Financeiro, Configurações)
-- [ ] Logo "LP" em dourado no topo da sidebar (componente SVG inline reutilizável)
-- [ ] Adicionar avatar do usuário + menu de conta na sidebar (estático, mockado)
-- [ ] Criar `Header` com título da página, breadcrumb e slot para ações (botão "Novo X" contextual)
-- [ ] Criar páginas vazias (placeholder) para `/dashboard`, `/partes`, `/processos`, `/pipeline`, `/agenda`, `/financeiro`, `/configuracoes`
-- [ ] Aplicar paleta institucional: dourado primário, preto profundo na sidebar, neutral-900 nas superfícies
-- [ ] Garantir responsividade básica (sidebar colapsável em mobile via Sheet/drawer)
-- [ ] Criar `app/(auth)/layout.tsx` com layout centralizado para telas de auth (logo grande em serifa)
-- [ ] Componente `Logo` com variantes (full | mark) para reuso
+- [x] Criar layout base `app/(app)/layout.tsx`
+- [x] Criar componente `Sidebar` com links de navegação (Dashboard, Partes, Processos, Pipeline, Agenda, Financeiro, Configurações)
+- [x] Adicionar avatar do usuário + menu de conta na sidebar (estático, mockado)
+- [x] Criar `Header` com título da página, breadcrumb e slot para ações (botão "Novo X" contextual)
+- [x] Criar páginas vazias (placeholder) para `/dashboard`, `/partes`, `/processos`, `/pipeline`, `/agenda`, `/financeiro`, `/configuracoes`
+- [x] Aplicar paleta: indigo-600 primário, zinc-950 sidebar, zinc-900 superfície
+- [x] Garantir responsividade básica (sidebar colapsável em mobile via Sheet/drawer)
+- [x] Criar `app/(auth)/layout.tsx` com layout centralizado para telas de auth
 
-**Commit final:** `feat: app shell with sidebar, navigation and brand-aligned base layout`
+**Commit final:** `feat: app shell with sidebar, navigation and base layout`
 
 ---
 
@@ -146,7 +110,6 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 - [ ] Criar página `/reset-password` para redefinição via link
 - [ ] Adicionar validação client-side com Zod + react-hook-form
 - [ ] Adicionar estados de loading, erro e sucesso nos formulários
-- [ ] Tela de login com identidade visual forte: logo grande em serifa, fundo preto, formulário em card neutral-900
 
 **Backend:**
 - [ ] Criar Server Actions em `lib/auth/actions.ts` (signIn, signOut, resetPassword)
@@ -217,7 +180,7 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
   - Aba Documentos (placeholder para M8)
   - Aba Financeiro (placeholder para M9)
   - Aba Prazos (placeholder para M5 — já vinculável depois)
-- [ ] Badge de sigilo visível no header da página de detalhe
+- [ ] Indicador de sigilo visível no header da página de detalhe
 - [ ] Indicador da situação prisional do réu no header (se aplicável)
 
 **Banco de dados:**
@@ -245,7 +208,7 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
   - Calendário mensal (`react-big-calendar` em modo dark)
   - Lista semanal (agrupada por dia)
   - Lista do dia (foco)
-- [ ] Chips coloridos por tipo de evento: prazo (âmbar), audiência (neutro com borda dourada), visita ao preso (roxo), reunião (dourado), diligência (verde)
+- [ ] Chips coloridos por tipo de evento: prazo, audiência, visita ao preso, reunião, diligência
 - [ ] Criar drawer/modal "Novo Evento" com formulário condicional por tipo:
   - Prazo: marco inicial, marco final, processo vinculado, descrição
   - Audiência: data, hora, local (comarca/vara), processo, partes presentes esperadas
@@ -253,10 +216,10 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
   - Reunião com cliente: data, hora, local, parte (cliente) — único tipo que pode existir sem processo
   - Diligência: data, descrição, local, processo
 - [ ] Página de detalhe do evento com botão "Marcar como Cumprido" (que dispara modal de dupla confirmação)
-- [ ] **Modal de confirmação de cumprimento** com peso visual alto:
+- [ ] **Modal de confirmação de cumprimento**:
   - Resumo do evento (tipo, data, processo, descrição)
   - Campo obrigatório "O que foi feito?" (mín. 10 caracteres)
-  - Dois botões claros: "Cancelar" (neutro) e "Confirmar Cumprimento" (dourado, destacado)
+  - Dois botões claros: "Cancelar" (neutro) e "Confirmar Cumprimento" (primário, destacado)
 - [ ] Botão "Marcar como Perdido" separado, com cor crítica:
   - Modal exige justificativa textual (mín. 20 caracteres)
   - Aviso explícito de que essa ação será notificada ao Titular
@@ -265,7 +228,7 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
   - Âmbar: 3-7 dias (D-7 a D-3)
   - Vermelho: < 3 dias (D-1)
   - Vermelho pulsante: vencendo hoje
-  - Cinza com tarja vermelha: perdido
+  - Cinza com indicador vermelho: perdido
 - [ ] Widget "Prazos Críticos" no dashboard (preview, conexão real em M10)
 
 **Banco de dados:**
@@ -299,13 +262,12 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 - [ ] Colunas: Pré-processual → Inquérito → Denúncia/Recebimento → Instrução → Memoriais → Sentença → Recursos → Execução → Arquivado
 - [ ] Criar componente `FaseColuna` com header (nome + contador de processos)
 - [ ] Criar componente `ProcessoCard`:
-  - Alcunha do caso (em destaque, serifa pequena)
+  - Alcunha do caso (em destaque)
   - Cliente (nome) + réu (se diferente)
   - Comarca + vara
-  - **Borda esquerda colorida** indicando criticidade do próximo prazo (verde/âmbar/vermelho)
   - Próximo prazo/audiência (data + tipo)
   - Avatar do responsável
-  - Badge de sigilo se aplicável
+  - Indicador de sigilo se aplicável
 - [ ] Implementar drag-and-drop entre colunas com `@dnd-kit`
 - [ ] **Modal de confirmação ao mover** entre fases (mudança de fase é evento auditado):
   - "Mover [alcunha] de [fase atual] para [nova fase]?"
@@ -335,12 +297,12 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 **Interface primeiro:**
 - [ ] Implementar aba "Timeline" em `/processos/[id]`
 - [ ] Componente `Timeline` com itens cronológicos (mais recente primeiro)
-- [ ] Ícone + cor por tipo:
-  - 📋 Andamento oficial (despacho, decisão, intimação) — neutro
-  - ✍️ Peça produzida (petição, memoriais) — dourado
-  - 💬 Comunicação com cliente — verde
-  - 🔒 Anotação interna — roxo (badge "confidencial" se marcada)
-  - 🎤 Evento de audiência — âmbar
+- [ ] Ícone por tipo:
+  - 📋 Andamento oficial (despacho, decisão, intimação)
+  - ✍️ Peça produzida (petição, memoriais)
+  - 💬 Comunicação com cliente
+  - 🔒 Anotação interna (com indicador "confidencial" se marcada)
+  - 🎤 Evento de audiência
 - [ ] Formulário inline "Registrar andamento" com:
   - Tipo (select)
   - Data (default: hoje, editável)
@@ -385,7 +347,7 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 - [ ] Botão "Nova versão" abre upload preservando metadados, incrementa `versao`
 - [ ] Aba "Histórico de versões" por documento
 - [ ] Aba "Log de acesso" por documento (quem viu, baixou, editou e quando) — visível apenas ao Titular
-- [ ] Badge de sigilo destacado em documentos sensíveis
+- [ ] Indicador de sigilo destacado em documentos sensíveis
 
 **Banco de dados:**
 - [ ] Migration: tabela `documentos` com RLS por `office_id`
@@ -468,7 +430,6 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 - [ ] **Atalhos rápidos** no topo: + Novo Processo, + Novo Prazo, + Nova Parte
 - [ ] Skeleton loading para todos os cards
 - [ ] Saudação personalizada com nome do usuário ("Bom dia, Dr. Leandro")
-- [ ] Tipografia da saudação em serifa para reforçar identidade
 
 **Backend:**
 - [ ] Queries agregadas via Supabase para cada KPI (escopadas por `office_id` via RLS)
@@ -547,7 +508,7 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 > **Nota:** Opcional. Este sistema é dedicado, mas pode haver interesse em ter uma landing page institucional em `leandropedrosa.adv.br` que use a mesma identidade visual. Avaliar com o cliente antes de executar.
 
 - [ ] Criar `app/page.tsx` como landing institucional
-- [ ] Seção Hero: nome em serifa grande, subtítulo "Advocacia Criminal", CTA "Agendar consulta"
+- [ ] Seção Hero: nome em destaque, subtítulo "Advocacia Criminal", CTA "Agendar consulta"
 - [ ] Seção Áreas de Atuação: cards com áreas do criminal (Tribunal do Júri, Crimes Patrimoniais, Tráfico, Crimes Cibernéticos, etc.)
 - [ ] Seção Sobre: foto/bio do Dr. Leandro, OAB, formação
 - [ ] Seção Diferenciais: atendimento, sigilo, dedicação
@@ -600,8 +561,8 @@ Adicionar `class="dark"` no `<html>` por padrão — dark é o tema principal, n
 
 | # | Branch | Entrega |
 |---|---|---|
-| M0 | `setup/project-foundation` | Stack configurada, identidade visual no Tailwind, projeto no GitHub |
-| M1 | `feat/app-shell` | Layout com sidebar institucional e navegação |
+| M0 | `setup/project-foundation` | Stack configurada, projeto no GitHub |
+| M1 | `feat/app-shell` | Layout com sidebar e navegação |
 | M2 | `feat/authentication` | Login, recuperação de senha, seed do Titular |
 | M3 | `feat/partes` | CRUD de partes com múltiplos papéis |
 | M4 | `feat/processos` | CRUD de processos com validação CNJ e sigilo |

@@ -22,10 +22,10 @@ export function Logo({ variant = "mark", className }: LogoProps) {
     <div className={cn("flex items-center gap-2.5", className)}>
       {mark}
       <div className="flex flex-col min-w-0">
-        <span className="font-serif text-neutral-50 text-[13px] font-medium leading-tight truncate">
+        <span className="font-serif text-zinc-50 text-[13px] font-medium leading-tight truncate">
           Leandro Pedrosa
         </span>
-        <span className="text-neutral-500 text-[11px] leading-tight truncate">
+        <span className="text-zinc-500 text-[11px] leading-tight truncate">
           Advocacia Criminal
         </span>
       </div>
